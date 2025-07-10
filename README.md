@@ -1,4 +1,4 @@
-# Rag_Spider_task_1
+# Rag_Spider_task_2 A
 The code is organized into two files **preprocessing.py** and **retrieval pipeline and webpage.py**
 
 **Preprocessing.py**
