@@ -27,5 +27,5 @@ The code is organized into two files **preprocessing.py** and **retrieval pipeli
 
 * Displays the final answer on the webpage
 
-Also a video showing the working of UI is also added
+Also a video and 3 images demonstrating the working of webpage are also added
 
