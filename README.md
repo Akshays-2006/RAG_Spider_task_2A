@@ -1,10 +1,26 @@
 # Rag_Spider_task_1
 The code is in 2 files preprocessing.py and retrieval pipeline and webpage.py
+**Preprocessing.py**
+Loads 5 research papers
 
-preprocessing file loads all the 5 papers and split them into chunks and embedds using **sentence-transformers/all-mpnet-base-v2**
-and the embedded content is stored in chromadb vectordatabase which is eventually stored on disk
+Splits them into chunks.
 
-Retrieval file creates a basic webpage using streamlit and gets input from user and embedds it and similar chunks are retrieved from database along with similarity scores
-Similarity scores are also printed in the terminal
-Then these chunks are concatenated and passed to the model(**Llama-3.1-8B-Instruct** is being used)
-Then the answer from the model is displayed in the webpage
+Embeds the chunks using: **sentence-transformers/all-mpnet-base-v2**.
+
+Stores the embeddings in ChromaDB (disk-persistent vector database).
+
+**Retrieval_pipeline_and_webpage.py:**
+
+Uses **Streamlit** to build a simple web interface.
+
+Takes question from the user using webpage.
+
+Embeds the question using the same model (all-mpnet-base-v2).
+
+Retrieves top similar chunks from ChromaDB.
+
+Prints similarity scores in the terminal.
+
+Concatenates the retrieved chunks and sends them to **LLaMA 3.1 8B Instruct** for answer generation.
+
+Displays the final answer on the webpage.
