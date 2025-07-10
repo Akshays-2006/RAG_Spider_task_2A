@@ -21,10 +21,11 @@ The code is organized into two files **preprocessing.py** and **retrieval pipeli
 
 * Retrieves top similar chunks from ChromaDB
 
-Also a video showing the working of UI is also added
-
 * Prints similarity scores in the terminal
 
 * Concatenates the retrieved chunks and sends them to **LLaMA 3.1 8B Instruct** for answer generation
 
 * Displays the final answer on the webpage
+
+Also a video showing the working of UI is also added
+
