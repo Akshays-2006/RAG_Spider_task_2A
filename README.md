@@ -1,6 +1,8 @@
 # Rag_Spider_task_1
-The code is in 2 files preprocessing.py and retrieval pipeline and webpage.py
+The code is organized into two files **preprocessing.py** and **retrieval pipeline and webpage.py**
+
 **Preprocessing.py**
+
 * Loads 5 research papers
 
 * Splits them into chunks
@@ -18,6 +20,8 @@ The code is in 2 files preprocessing.py and retrieval pipeline and webpage.py
 * Embeds the question using the same model (all-mpnet-base-v2)
 
 * Retrieves top similar chunks from ChromaDB
+
+Also a video showing the working of UI is also added
 
 * Prints similarity scores in the terminal
 
