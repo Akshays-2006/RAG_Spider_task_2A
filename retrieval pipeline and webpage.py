@@ -5,7 +5,7 @@
 
 import streamlit as st
 import base64
-
+#Basic webpage is created using streamlit
 def set_background(image_file):
     with open(image_file, "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
@@ -37,12 +37,10 @@ st.write('''This is a RAG pipeline which digests data from the given 5 research 
 import os
 os.environ["HUGGINGFACEHUB_API_TOKEN"]="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"
 
-
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.document_loaders import PyPDFLoader
 from huggingface_hub import InferenceClient
-
 
 embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2", model_kwargs={"device": "cpu"})
 try:
@@ -54,8 +52,9 @@ try:
 except Exception as e:
     st.error(f"Error initializing vector store: {e}")
     st.stop()
+#Input box is created which gets the question from user
 s=st.chat_input(placeholder="Ask a question about the research papers...")
-
+#input question is embedded and similar chunks are retrieved from the vectordatabase
 if s:
     with st.spinner("Retrieving and answering your question..."):
         similar_content=vector_store.similarity_search_with_score(
@@ -78,7 +77,7 @@ if s:
 )
  
         question=s
-
+#A prompt is created consisting of Question along with retrieved chunks 
         prompt=f"""Use only the following retrieved context to answer the question. 
 You may infer possible approaches based on the context, even if they are not explicitly mentioned.
 If there is truly no relevant information or clues in the context, then say "I don't know."
@@ -100,3 +99,4 @@ Context:{context}
         )
     st.success("Done!")
     st.markdown(completion.choices[0].message.content)
+    #Finally the answer from chatbot is displayed
