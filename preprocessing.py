@@ -27,6 +27,8 @@ no_page=0
 doc_id=0
 page_id=0
 text_splitter = CharacterTextSplitter(separator="\n",chunk_size=2000, chunk_overlap=100)
+#Documents are loaded one by one and then it is divided into chunks of size 2000 and overlap of 100 
+#then embedded and ids are added and stored in chromadb
 for file_name in documents:
     path=os.path.join("C:\\Users\\aksha\\Desktop\\Spider task 2 papers",file_name)
     loader = PyPDFLoader(path)
